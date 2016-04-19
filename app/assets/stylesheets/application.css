@@ -9,3 +9,16 @@
  *= require_tree .
  *= require_self
  */
+
+.jumbotron {
+  background: no-repeat center/110% url(splash.jpeg);
+  height: 650px;
+ }
+
+a {
+  color: #ffffff;
+}
+
+/* .jumbotron {
+  background: no-repeat center center, url(splash.jpg) ;
+ }*/
