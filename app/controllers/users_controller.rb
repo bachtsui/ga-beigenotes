@@ -61,10 +61,21 @@ class UsersController < ApplicationController
   #CRUD for Notes
   #Can we delete notes
 
-  #def show_note
-    #READ for notes
-  #end
+  def new_note
+    #Create for notes
+  end
 
+  def show_note
+    #READ for notes
+  end
+
+  def edit_note
+    #UPDATE for notes
+  end
+
+  def update_note 
+    #UPDATE for notes
+  end
 
   private
 

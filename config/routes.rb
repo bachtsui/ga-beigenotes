@@ -12,8 +12,15 @@ Rails.application.routes.draw do
   delete "/users/:id", to: "users#destroy"
 
   #Routes for Notes
-  #get "/users/:id/notes/:id," to: "users#show_note", as: "show_note"
-    #Read for Notes
+  #Using :nid to prevent conflict with :id
+  
+  get "/users/:id/notes/:nid", to: "users#new_note", as: "new_note"
+  #Create for Notes
+  get "/users/:id/notes/:nid", to: "users#show_note", as: "show_note"
+  #Read for Notes
+  get "/users/:id/notes/:nid/edit", to: "users#edit_note", as: "edit_note"
+  patch "/users/:id/notes/:nid", to: "users#update_note"
+  #Update for Notes
 
   # Routes for Sessions
   get "/login", to: "sessions#new", as: "new_session"   
