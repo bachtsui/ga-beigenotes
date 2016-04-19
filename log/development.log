@@ -3685,3 +3685,79 @@ Started GET "/" for ::1 at 2016-04-18 18:30:12 -0700
 Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-19 10:31:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (16.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 560ms (Views: 545.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-04-19 10:31:58 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 233ms (Views: 122.4ms | ActiveRecord: 54.7ms)
+
+
+Started POST "/users" for ::1 at 2016-04-19 10:32:47 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xcsqt64iYzNK9tQy1J4QwPrTnqexAKlupEJi3QGeLfJLN/Js1X7Ym3LyX2s8USE2Sihuo6IOYrX/zS4p42r9GQ==", "user"=>{"first_name"=>"Doug", "last_name"=>"Tsui", "phone_number"=>"123456789", "email"=>"llllllll@gmail.com", "username"=>"Joey", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (8.4ms)[0m  BEGIN
+  [1m[36mUser Exists (35.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE ("users"."id" IS NOT NULL) AND "users"."slug" = $1 LIMIT 1[0m  [["slug", "tsui"]]
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'llllllll@gmail.com' LIMIT 1
+  [1m[36mSQL (9.0ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "phone_number", "email", "username", "password_digest", "slug", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["first_name", "Doug"], ["last_name", "Tsui"], ["phone_number", "123456789"], ["email", "llllllll@gmail.com"], ["username", "Joey"], ["password_digest", "$2a$10$8xZPDx7NGFqcI5D5mULXUe3C0PeomvmAtz2OdqTEQajPDjjiEGBYS"], ["slug", "tsui-4d130161-382b-43d1-94bb-09e33a467b25"], ["created_at", "2016-04-19 17:32:48.266369"], ["updated_at", "2016-04-19 17:32:48.266369"]]
+  [1m[35m (2.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/tsui-4d130161-382b-43d1-94bb-09e33a467b25
+Completed 302 Found in 523ms (ActiveRecord: 56.6ms)
+
+
+Started GET "/users/tsui-4d130161-382b-43d1-94bb-09e33a467b25" for ::1 at 2016-04-19 10:32:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"tsui-4d130161-382b-43d1-94bb-09e33a467b25"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (34.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."slug" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["slug", "tsui-4d130161-382b-43d1-94bb-09e33a467b25"]]
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 81ms (Views: 37.9ms | ActiveRecord: 34.5ms)
+
+
+Started GET "/users/8/edit" for ::1 at 2016-04-19 10:32:51 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."slug" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["slug", "8"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered users/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/users/tsui-4d130161-382b-43d1-94bb-09e33a467b25" for ::1 at 2016-04-19 10:32:54 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A+zqk3dY78ctM/VkAYe+M3KYWQfiHZm51uNsYDDMa6QVEDJIDARUbxU3fj3pSI/FwmOpA/ETUmKNbCCU0ji7Tw==", "user"=>{"first_name"=>"Doug", "last_name"=>"Tsui", "phone_number"=>"123456789", "email"=>"llllllll@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Update Profile", "id"=>"tsui-4d130161-382b-43d1-94bb-09e33a467b25"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE ("users"."email" = 'llllllll@gmail.com' AND "users"."id" != 8) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/tsui-4d130161-382b-43d1-94bb-09e33a467b25
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/tsui-4d130161-382b-43d1-94bb-09e33a467b25" for ::1 at 2016-04-19 10:32:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"tsui-4d130161-382b-43d1-94bb-09e33a467b25"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."slug" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["slug", "tsui-4d130161-382b-43d1-94bb-09e33a467b25"]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 24.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/logout" for ::1 at 2016-04-19 10:32:57 -0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-19 10:32:57 -0700
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
