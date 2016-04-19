@@ -58,6 +58,14 @@ class UsersController < ApplicationController
     end
   end
 
+  #CRUD for Notes
+  #Can we delete notes
+
+  #def show_note
+    #READ for notes
+  #end
+
+
   private
 
   def user_params

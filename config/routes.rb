@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
   delete "/users/:id", to: "users#destroy"
 
+  #Routes for Notes
+  #get "/users/:id/notes/:id," to: "users#show_note", as: "show_note"
+    #Read for Notes
+
   # Routes for Sessions
   get "/login", to: "sessions#new", as: "new_session"   
   get "/logout", to: "sessions#destroy", as: "destroy_session"
