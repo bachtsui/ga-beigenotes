@@ -16,8 +16,10 @@ class User < ActiveRecord::Base
   has_secure_password
   include FriendlyId
   friendly_id :last_name,:use => [:slugged]
-  
-  #Use for FriendlyId         
-  # extend FriendlyId
-  # friendly_id :name, use: :slugged
+
+  #Used by SessionsController Create
+  def self.confirm(params)
+    @user = User.find_by({email: params[:email]})
+    @user.try(:authenticate, params[:password])
+  end  
 end
