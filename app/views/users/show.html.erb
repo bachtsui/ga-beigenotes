@@ -1,0 +1,8 @@
+<h1><span>Welcome, <%= @user.first_name %> <%= @user.last_name %></span></h1>
+
+<li><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></li>
+<li><b>Phone Number: </b><%= @user.phone_number %></li>
+<li><b>Email: </b><%= @user.email %></li>
+<li><b>Username: </b><%= @user.username %></li>
+
+<li><%= link_to "Log Out", destroy_session_path %></li>

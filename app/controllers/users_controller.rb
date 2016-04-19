@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!
+  
+  before_action :logged_in?, only: [:show, :edit, :update] 
 
 	def index
     @users = User.all
@@ -22,8 +23,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
-    render :show
+    @user = User.friendly.find(params[:id])
   end
 
   private
