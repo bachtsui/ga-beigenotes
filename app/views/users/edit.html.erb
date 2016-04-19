@@ -1,4 +1,3 @@
-<h1><span>Edit Profile</span></h1>
 
 <% flash.each do |name, msg| %>
   <div class="alert <%= name == 'error' ? 'alert-danger' : 'alert-info' %>">
@@ -8,32 +7,36 @@
   </div>
 <% end %>
 
-<%= form_for @user, :html => {:class => "form-horizontal center-block"} do |f|%>
-	<div class="form-group">
-  	<%= f.label :first_name, "First Name", class: "control-label" %>
-  	<%= f.text_field :first_name, :required => true, class: "form-control" %>
-	</div>
-  <div class="form-group">
-    <%= f.label :last_name, "Last Name", class: "control-label" %>
-    <%= f.text_field :last_name, :required => true, class: "form-control" %>
-  </div>
-  <div class="form-group">
-  	<%= f.label :phone_number, "Phone Number", class: "control-label" %>
-  	<%= f.text_field :phone_number, :required => true, class: "form-control"%>
-	</div>
-  <div class="form-group">
-    <%= f.label :email, "Email", class: " control-label" %>
-    <%= f.text_field :email, :required => true, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password, "Password", class: "control-label" %>
-    <%= f.password_field :password, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password, "Password Confirmation", class: "control-label" %>
-    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
-  </div>  
-  <div class="form-group">
-    <%= f.submit "Update Profile", class: "btn btn-default  center-bl form-control" %>
-  </div>
-<% end %>
+<div class="container">
+<h1><span>Edit Profile</span></h1>
+
+  <%= form_for @user, :html => {:class => "form-horizontal center-block"} do |f|%>
+  	<div class="form-group">
+    	<%= f.label :first_name, "First Name", class: "control-label" %>
+    	<%= f.text_field :first_name, :required => true, class: "form-control" %>
+  	</div>
+    <div class="form-group">
+      <%= f.label :last_name, "Last Name", class: "control-label" %>
+      <%= f.text_field :last_name, :required => true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+    	<%= f.label :phone_number, "Phone Number", class: "control-label" %>
+    	<%= f.text_field :phone_number, :required => true, class: "form-control"%>
+  	</div>
+    <div class="form-group">
+      <%= f.label :email, "Email", class: " control-label" %>
+      <%= f.text_field :email, :required => true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, "Password", class: "control-label" %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, "Password Confirmation", class: "control-label" %>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+    </div>  
+    <div class="form-group">
+      <%= f.submit "Update Profile", class: "btn btn-default  center-bl form-control" %>
+    </div>
+  <% end %>
+</div>  
