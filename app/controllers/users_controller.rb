@@ -58,10 +58,17 @@ class UsersController < ApplicationController
     end
   end
 
-  #CRUD for Notes
+  #METHOD for Contact
+  # def contact
+  # end
+  
+
+  #CR for Notes
   #Can we delete notes
 
   def new_note
+    @user = User.friendly.find(params[:id])
+    render new_note_path
     #Create for notes
   end
 
@@ -69,13 +76,13 @@ class UsersController < ApplicationController
     #READ for notes
   end
 
-  def edit_note
+  #def edit_note
     #UPDATE for notes
-  end
+  #end
 
-  def update_note 
+  #def update_note 
     #UPDATE for notes
-  end
+  #end
 
   private
 
