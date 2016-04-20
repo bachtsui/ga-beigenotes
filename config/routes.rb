@@ -12,12 +12,12 @@ Rails.application.routes.draw do
   delete "/users/:id", to: "users#destroy"
 
   #Routes for Contact
-  #get "/users/:id/contact", to: "users#contact", as:"contact"
+  get "/users/:id/contact", to: "users#new_contact", as: "new_contact"
+  post "/users/:id/contact", to: "contacts#create"
 
   #Routes for Notes
   #Using :nid to prevent conflict with :id
-  get "/users/:id/notes", to: "users#new_note", as: "new_note"
-  #Create for Notes
+  get "/users/:id/note", to: "users#new_note", as: "new_note"
   get "/users/:id/notes/:nid", to: "users#show_note", as: "show_note"
   #Read for Notes
   

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  import secrets.rb
   before_action :logged_in?, only: [:show, :edit, :update] 
 
 	def index
@@ -67,11 +66,16 @@ class UsersController < ApplicationController
   #Can we delete notes
 
   #Create for notes
-  def new_note
+  def new_contact
     @user = User.friendly.find(params[:id])
-    @user.first_name.clear
-    @user.phone_number.clear
+    @contact = Contact.new 
+    # @user.first_name.clear
+    # @user.phone_number.clear
     render :form
+  end
+
+  def new_note
+    render :note
   end
 
   def show_note

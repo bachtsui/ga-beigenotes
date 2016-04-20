@@ -2,18 +2,17 @@
 
 <%= form_for @user, url: "/users/:id/notes/:nid", method: "post" do |f| %>
 	<div class="form-group">
-		<%= f.label :first_name, "First Name", class: "control-label" %>
-		<%= f.text_field :first_name, :required => true, class: "form-control", placeholder: "John" %>
+		<%= f.label :user.contact.name, "First Name of Date", class: "control-label" %>
+		<%= f.text_field :user.contact.name, :required => true, class: "form-control", placeholder: "First Name" %>
 	</div>
 	<div class="form-group">
-		<%= f.label :phone_number, "Phone Number", class: "control-label" %>
-		<%= f.text_field :phone_number, :required => true, class: "form-control", placeholder: "6505358525" %>
+		<%= f.label :user.contact.number, "Phone Number of Date", class: "control-label" %>
+		<%= f.text_field :user.contact.number, :required => true, class: "form-control", placeholder: "Phone Number" %>
 	</div>
 	<div class="form-group">
 		<%= f.submit "Submit", class: "btn btn-default  center-bl form-control" %>
 	</div>
 <% end %> 
-
 
 
 
