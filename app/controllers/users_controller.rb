@@ -86,6 +86,19 @@ class UsersController < ApplicationController
     #UPDATE for notes
   #end
 
+  #These methods are used for Twilio
+  def twilio_client
+    Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
+  end
+
+  def send_message
+    twilio_client.messages.create(
+      to: phone_number,
+      from: ENV['TWILIO_PHONE_NUMBER'],
+      body: "Testing"
+    )
+  end
+
   private
 
   def user_params
