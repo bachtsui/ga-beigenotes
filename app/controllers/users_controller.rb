@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  import secrets.rb
   before_action :logged_in?, only: [:show, :edit, :update] 
 
 	def index
