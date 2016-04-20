@@ -9,3 +9,37 @@
  *= require_tree .
  *= require_self
  */
+
+.splash {
+  background: url(splash.jpeg);
+  background-repeat: no-repeat; 
+  background-position: 50%;   
+  height: 650px;
+  margin-top: -20px;
+ }
+
+ h1 {
+  display: block;
+  font-size: 2em;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  color: #ffffff;
+}
+
+a {
+  color: #ffffff;
+}
+
+/* .jumbotron {
+  background: no-repeat center center, url(splash.jpg) ;
+ }*/
