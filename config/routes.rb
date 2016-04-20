@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   #Routes for Notes
   #Using :nid to prevent conflict with :id
-  get "/users/:id/notes/:nid", to: "users#new_note", as: "new_note"
+  get "/users/:id/notes", to: "users#new_note", as: "new_note"
   #Create for Notes
   get "/users/:id/notes/:nid", to: "users#show_note", as: "show_note"
   #Read for Notes

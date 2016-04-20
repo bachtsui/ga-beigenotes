@@ -66,10 +66,12 @@ class UsersController < ApplicationController
   #CR for Notes
   #Can we delete notes
 
+  #Create for notes
   def new_note
     @user = User.friendly.find(params[:id])
-    render new_note_path
-    #Create for notes
+    @user.first_name.clear
+    @user.phone_number.clear
+    render :form
   end
 
   def show_note
