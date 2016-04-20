@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
 
   # One to Many Association for User and Notes
   has_many :notes
+
+  # Many to Many Association with Users and Contacts
+  has_many :user_contact_joints
+  has_many :contacts, :through => :user_contact_joints
 end
