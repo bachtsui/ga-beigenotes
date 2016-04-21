@@ -1,0 +1,11 @@
+You're on Note Views Page!
+
+<%= form_for @note, url: "/users/:id/notes", method: "post" do |f| %>
+	<%= f.label "Where did you meet this person (so we can send them a reminder)?" %>
+	<%= f.text_field :aone, :required => true, class: "form-control" %>
+
+	<%= f.label "What did you like the most about this person?" %>
+	<%= f.text_field :atwo, :required => true, class: "form-control"%>
+
+	 <%= f.submit "Submit", class: "btn btn-default  center-bl form-control" %>
+<% end %>

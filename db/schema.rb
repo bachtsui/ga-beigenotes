@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419230215) do
+ActiveRecord::Schema.define(version: 20160420233238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -43,6 +50,21 @@ ActiveRecord::Schema.define(version: 20160419230215) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "qone"
+    t.string   "qtwo"
+    t.string   "qthree"
+    t.string   "qfour"
+    t.string   "qfive"
+    t.text     "aone"
+    t.text     "atwo"
+    t.text     "athree"
+    t.text     "afour"
+    t.text     "afive"
+    t.text     "paone"
+    t.text     "patwo"
+    t.text     "pathree"
+    t.text     "pafour"
+    t.text     "pafive"
   end
 
   add_index "notes", ["user_id"], name: "index_notes_on_user_id", using: :btree
@@ -53,6 +75,13 @@ ActiveRecord::Schema.define(version: 20160419230215) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "panswer"
+  end
+
+  create_table "user_contact_joints", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "contact_id"
   end
 
   create_table "users", force: :cascade do |t|

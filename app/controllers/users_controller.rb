@@ -1,6 +1,20 @@
 class UsersController < ApplicationController
-  
   before_action :logged_in?, only: [:show, :edit, :update] 
+
+  #For Twilio Messaging
+  def twilio_client
+    Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
+  end
+
+  def send_message
+    #p Contact.last.number
+    #@user.contact.last.number
+    twilio_client.messages.create(
+      to: Contact.last.number,
+      from: ENV['TWILIO_PHONE_NUMBER'],
+      body: "Testing"
+    )
+  end
 
 	def index
     @users = User.all
@@ -58,29 +72,60 @@ class UsersController < ApplicationController
     end
   end
 
-  #CRUD for Notes
+  #METHOD for Contact
+  # def contact
+  # end
+  
+
+  #CR for Notes
   #Can we delete notes
 
+  #Create for notes
+  def new_contact
+    @user = User.friendly.find(params[:id])
+    @contact = Contact.new 
+    # @user.first_name.clear
+    # @user.phone_number.clear
+    render :form
+    #redirect_to new_note_path(@user)
+  end
+
   def new_note
-    #Create for notes
+    @note = Note.new
+    render :note
+  end
+
+  def create_note
+    @note = Note.create(note_params)
+    send_message
+    redirect_to "/users/#{current_user.slug}"
+
+    #Need to add twilio functionality
   end
 
   def show_note
     #READ for notes
   end
 
-  def edit_note
+  #def edit_note
     #UPDATE for notes
-  end
+  #end
 
-  def update_note 
+  #def update_note 
     #UPDATE for notes
-  end
+  #end
+
+  #These methods are used for Twilio
+
 
   private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :phone_number, :email, :username, :password, :password_confirmation)
+  end
+
+  def note_params
+    params.require(:note).permit(:aone, :atwo)
   end
 
   def set_user
