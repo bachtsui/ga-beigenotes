@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
   delete "/users/:id", to: "users#destroy"
 
+  #Route for Onboard
+  get "/onboard", to: "users#onboard", as: "onboard_user"
+
   #Routes for Contact
   get "/users/:id/contact", to: "users#new_contact", as: "new_contact"
   post "/users/:id/contact", to: "contacts#create"
@@ -21,7 +24,6 @@ Rails.application.routes.draw do
   get "/users/:id/notes/:nid", to: "users#show_note", as: "show_note"
   post "/users/:id/notes", to: "users#create_note"
   #Read for Notes
-  
   #get "/users/:id/notes/:nid/edit", to: "users#edit_note", as: "edit_note"
   #patch "/users/:id/notes/:nid", to: "users#update_note"
   #Update for Notes, might need to add later

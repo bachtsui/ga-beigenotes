@@ -5,7 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
-qone = Question.create([{ask: "Where did you meet this person (so we can send them a reminder)?"}])
-qtwo = Question.create([{ask: "What did you like the most about this person?"}]) 

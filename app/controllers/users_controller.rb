@@ -117,6 +117,9 @@ class UsersController < ApplicationController
 
   #These methods are used for Twilio
 
+  def onboard
+    render :onboard
+  end
 
   private
 

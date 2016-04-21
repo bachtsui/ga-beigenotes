@@ -23,8 +23,10 @@ class User < ActiveRecord::Base
     @user.try(:authenticate, params[:password])
   end  
 
-  # One to Many Association for User and Notes
-  has_many :notes
+  # Many to Many Association for User and Notes
+  has_many :user_note_joints
+  has_many :notes, :through => :user_note_joints
+
 
   # Many to Many Association with Users and Contacts
   has_many :user_contact_joints

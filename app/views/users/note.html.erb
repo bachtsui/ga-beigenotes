@@ -1,6 +1,8 @@
 You're on Note Views Page!
 
 <%= form_for @note, url: "/users/:id/notes", method: "post" do |f| %>
+	<%= f.hidden_field :user_id, value: current_user.id %>
+	<%= f.hidden_field :note_id, value: @note.id %>
 	<%= f.label "Where did you meet this person (so we can send them a reminder)?" %>
 	<%= f.text_field :aone, :required => true, class: "form-control" %>
 
