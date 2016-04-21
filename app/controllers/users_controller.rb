@@ -1,6 +1,21 @@
 class UsersController < ApplicationController
   before_action :logged_in?, only: [:show, :edit, :update] 
 
+  #For Twilio Messaging
+  def twilio_client
+    Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
+  end
+
+  def send_message
+    #p Contact.last.number
+    #@user.contact.last.number
+    twilio_client.messages.create(
+      to: Contact.last.number,
+      from: ENV['TWILIO_PHONE_NUMBER'],
+      body: "Testing"
+    )
+  end
+
 	def index
     @users = User.all
   end
@@ -82,6 +97,7 @@ class UsersController < ApplicationController
 
   def create_note
     @note = Note.create(note_params)
+    send_message
     redirect_to "/users/#{current_user.slug}"
 
     #Need to add twilio functionality
@@ -100,17 +116,7 @@ class UsersController < ApplicationController
   #end
 
   #These methods are used for Twilio
-  def twilio_client
-    Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
-  end
 
-  def send_message
-    twilio_client.messages.create(
-      to: phone_number,
-      from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Testing"
-    )
-  end
 
   private
 
