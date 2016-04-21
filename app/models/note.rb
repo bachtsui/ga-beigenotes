@@ -4,6 +4,7 @@ class Note < ActiveRecord::Base
 	has_many :note_question_joints
 	has_many :questions, :through => :note_question_joints
 
-	# Many to One to Users
-	belongs_to :user 
+	# Many to Many to Users
+	has_many :user_note_joints
+  has_many :users, :through => :user_note_joints
 end

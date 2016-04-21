@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420233238) do
+ActiveRecord::Schema.define(version: 20160421211716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20160420233238) do
     t.integer  "limit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
     t.string   "qone"
     t.string   "qtwo"
     t.string   "qthree"
@@ -67,8 +66,6 @@ ActiveRecord::Schema.define(version: 20160420233238) do
     t.text     "pafive"
   end
 
-  add_index "notes", ["user_id"], name: "index_notes_on_user_id", using: :btree
-
   create_table "questions", force: :cascade do |t|
     t.string   "ask"
     t.text     "answer"
@@ -82,6 +79,13 @@ ActiveRecord::Schema.define(version: 20160420233238) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "contact_id"
+  end
+
+  create_table "user_note_joints", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "note_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,5 +113,4 @@ ActiveRecord::Schema.define(version: 20160420233238) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
-  add_foreign_key "notes", "users"
 end

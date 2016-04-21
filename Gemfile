@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 #Twilio Gem	
 gem 'twilio-ruby', '~> 4.1.0'
 
+#Hirb gem for Console
+gem 'hirb'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
