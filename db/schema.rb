@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420215936) do
+ActiveRecord::Schema.define(version: 20160420233238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,21 @@ ActiveRecord::Schema.define(version: 20160420215936) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "qone"
+    t.string   "qtwo"
+    t.string   "qthree"
+    t.string   "qfour"
+    t.string   "qfive"
+    t.text     "aone"
+    t.text     "atwo"
+    t.text     "athree"
+    t.text     "afour"
+    t.text     "afive"
+    t.text     "paone"
+    t.text     "patwo"
+    t.text     "pathree"
+    t.text     "pafour"
+    t.text     "pafive"
   end
 
   add_index "notes", ["user_id"], name: "index_notes_on_user_id", using: :btree

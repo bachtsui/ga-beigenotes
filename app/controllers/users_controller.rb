@@ -72,10 +72,19 @@ class UsersController < ApplicationController
     # @user.first_name.clear
     # @user.phone_number.clear
     render :form
+    #redirect_to new_note_path(@user)
   end
 
   def new_note
+    @note = Note.new
     render :note
+  end
+
+  def create_note
+    @note = Note.create(note_params)
+    redirect_to "/users/#{current_user.slug}"
+
+    #Need to add twilio functionality
   end
 
   def show_note
@@ -107,6 +116,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :phone_number, :email, :username, :password, :password_confirmation)
+  end
+
+  def note_params
+    params.require(:note).permit(:aone, :atwo)
   end
 
   def set_user

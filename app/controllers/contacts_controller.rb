@@ -1,11 +1,11 @@
 class ContactsController < ApplicationController
-	def new
-		@contact = Contact.new
-	end
+	# def new
+	# 	@contact = Contact.new
+	# end
 
 	def create	
 		@contact = Contact.create(contact_params)
-		redirect_to new_note_path
+		redirect_to "/users/#{current_user.slug}/notes"
 	end
 
 	private
