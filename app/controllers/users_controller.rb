@@ -104,8 +104,8 @@ class UsersController < ApplicationController
   end
 
   def show_note
-    # @note = Note.find_by_id(params[:nid])
-    # render :snote
+    @note = Note.find_by_id(params[:nid])
+    render :show_note
   end
 
   def edit_note
