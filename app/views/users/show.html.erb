@@ -25,4 +25,15 @@
       	<% end %>  
       </div>
     <li><%= link_to "Log Out", destroy_session_path %></li>
+    <div>
+      <h2> Completed Notes </h2>
+        <% @notes.each do |note| %>
+          <ul>
+            <li>
+              <a href= "<%=current_user.id%>/notes/<%=note.id%>">
+              <%=note.created_at%> </a>
+            </li>
+          </ul>
+        <% end %>
+    </div>
 </div>

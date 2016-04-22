@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.friendly.find(params[:id])
+    @notes = @user.notes
   end
 
   def edit
@@ -121,6 +122,7 @@ class UsersController < ApplicationController
     @note = Note.find_by_id(params[:nid])
     @note.update(notetwo_params)
     @user.notes << @note
+    @note.completed = true
     #Add note to the reciever of the note
     redirect_to user_path(@user)
   end
