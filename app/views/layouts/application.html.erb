@@ -27,8 +27,8 @@
  -->    <li><a href="#">About</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Send Note</a></li>
           <% if current_user %>
+            <li><%= link_to "Send Note", new_contact_path(current_user)%></li>
             <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Log Out", destroy_session_path %></li>
           <% else %>
