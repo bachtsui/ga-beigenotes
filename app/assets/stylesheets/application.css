@@ -10,14 +10,14 @@
  *= require_self
  */
 
-.splash {
+/*.splash {
   background: url(splash.jpeg);
   background-repeat: no-repeat; 
   background-position: 50%;   
   height: 650px;
   margin-top: -20px;
   color: #ffffff;  
- }
+ }*/
 
  h1 {
   display: block;
@@ -29,16 +29,60 @@
   font-weight: bold;
 }
 
+#splash {
+  margin-top: -80px;
+}
+
+button.btn.btn-lg.splash {
+  background-color: #de635e;
+  color: #ffffff;
+  width: 80%;
+}
+
+.navbar-nav {
+  font-size: 1.25em; 
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #ffffff;
+}
+
+/*#bs-example-navbar-collapse-1 {
+  background-color: #EBDECB;
+}*/
+
 ul {
   list-style: none;
 }
 
 body {
+  font-family: helvetica;
+  color: #4a4a4A;
+  background-color: #b9f0f1;
+}
 
+.navbar-default {
+  background-color: #4dbfc0;
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand {
+  font-family: monospace;
+  color: #ffffff;
+  margin-left: 90px;
+  font-size: 2em; 
+}
+
+.button.navbar-toggle.collapsed {
+  color: #ffffff;
 }
 
 a {
   color: #ffffff;
+}
+
+#buttons {
+  margin-top: -180px;
 }
 
 /* .jumbotron {
