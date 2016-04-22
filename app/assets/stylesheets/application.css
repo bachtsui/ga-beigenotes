@@ -45,6 +45,7 @@ button.btn.btn-lg.splash {
 
 .navbar-default .navbar-nav>li>a {
   color: #ffffff;
+  font-size: 1.25em;
 }
 
 /*#bs-example-navbar-collapse-1 {
