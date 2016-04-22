@@ -86,6 +86,16 @@ a {
   margin-top: -180px;
 }
 
+#flying {
+  width: 70%;
+  height: 70%;
+}
+
+#note {
+  width: 40%;
+  height: 40%;
+}
+
 /* .jumbotron {
   background: no-repeat center center, url(splash.jpg) ;
  }*/

@@ -11,11 +11,11 @@
     <div class="col-md-6 col-md-offset-3">
       <h1 class="text-center">Hello <%= @user.first_name %> <%= @user.last_name %>!</h1>
       <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">Send a Note</button></a></p>
-      <%=image_tag("flying_note.png", class: "img-responsive center-block", alt: "Example Image")%>
+      <%=image_tag("flying_note.png", class: "img-responsive center-block", id: "flying", alt: "Example Image")%>
       <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">Respond Notes</button></a></p>
-      <%=image_tag("respond_note.png", class: "img-responsive center-block", id: "splash", alt: "Example Image")%>
+      <%=image_tag("respond_note.png", class: "img-responsive center-block", alt: "Example Image")%>
       <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">View Completed Notes</button></a></p>
-      <%=image_tag("one_note.png", class: "img-responsive center-block", id: "splash", alt: "Example Image")%>      
+      <%=image_tag("one_note.png", class: "img-responsive center-block", id: "note", alt: "Example Image")%>      
     </div>
   </div>
 
