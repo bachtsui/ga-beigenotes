@@ -1,6 +1,6 @@
 You're Creating a New Note Page!
 
-<%= form_for @note, url: "/users/#{{current_user.id}}/notes", method: "post" do |f| %>
+<%= form_for @note, url: "/users/#{current_user.id}/notes", method: "post" do |f| %>
 	<%= f.hidden_field :user_id, value: current_user.id %>
 	<%= f.hidden_field :note_id, value: @note.id %>
 	<%= f.label "Where did you meet this person (so we can send them a reminder)?" %>

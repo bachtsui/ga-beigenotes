@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     twilio_client.messages.create(
       to: Contact.last.number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Try Beigenotes: https://afternoon-basin-78472.herokuapp.com/onboard" 
+      body: "Try Beigenotes: https://afternoon-basin-78472.herokuapp.com/onboard\n Here's a note for you to respond to\n 
+      https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit"
     )
   end
 
