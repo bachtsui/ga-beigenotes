@@ -135,6 +135,9 @@ class UsersController < ApplicationController
     render :onboard
   end
 
+  def display
+    render :instruction
+  end
   private
 
   def user_params
