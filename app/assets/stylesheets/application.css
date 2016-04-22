@@ -91,6 +91,11 @@ a {
   height: 70%;
 }
 
+#note {
+  width: 40%;
+  height: 40%;
+}
+
 /* .jumbotron {
   background: no-repeat center center, url(splash.jpg) ;
  }*/
