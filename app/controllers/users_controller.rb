@@ -7,13 +7,23 @@ class UsersController < ApplicationController
   end
 
   def send_message
-    #p Contact.last.number
-    #@user.contact.last.number
+    @user = current_user
     twilio_client.messages.create(
-      to: Contact.last.number,
+      to: @user.contacts.last.number,
       from: ENV['TWILIO_PHONE_NUMBER'],
       body: "Try Beigenotes: https://afternoon-basin-78472.herokuapp.com/onboard\n Here's a note for you to respond to\n 
       https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit"
+    )
+  end
+
+  #Need a way for the original sender to get notified
+  #We need to make a note helper function
+  def respond_message
+    twilio_client.messages.create(
+      to: @note.users.first.phone_number,
+      from: ENV['TWILIO_PHONE_NUMBER'],
+      body: "Your note was completed!\n 
+      https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/"
     )
   end
 
@@ -85,11 +95,8 @@ class UsersController < ApplicationController
   #Create for notes
   def new_contact
     @user = User.friendly.find(params[:id])
-    @contact = Contact.new 
-    # @user.first_name.clear
-    # @user.phone_number.clear
+    @contact = Contact.new
     render :form
-    #redirect_to new_note_path(@user)
   end
 
   def new_note
@@ -103,8 +110,6 @@ class UsersController < ApplicationController
     @user.notes << @note
     send_message
     redirect_to "/users/#{current_user.slug}"
-
-    #Need to add twilio functionality
   end
 
   def show_note
@@ -123,15 +128,10 @@ class UsersController < ApplicationController
     @note.update(notetwo_params)
     @user.notes << @note
     @note.completed = true
+    # respond_message
     #Add note to the reciever of the note
     redirect_to user_path(@user)
   end
-
-  #def update_note 
-    #UPDATE for notes
-  #end
-
-  #These methods are used for Twilio
 
   def onboard
     render :onboard
