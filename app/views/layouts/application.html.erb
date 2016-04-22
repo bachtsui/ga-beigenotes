@@ -28,7 +28,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
-            <li><%= link_to "Send Note", display_instruction_path%></li>
+            <li><%= link_to "Send Note", display_instruction_path(current_user)%></li>
             <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Log Out", destroy_session_path %></li>
           <% else %>
