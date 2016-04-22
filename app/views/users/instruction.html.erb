@@ -1,13 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Hello There!</h1>
+      <p>So you're ready to send a note to a past date. Here's a quick reminder of the steps. Don't stress. We're here every step of the way.</p>
+      <%=image_tag("instructions.png", class: "img-responsive center-block", alt: "Example Image")%> 
+      <p class="text-center">
+        <a href="/users/<%= current_user.id %>">
+            <button type="button" class="btn btn-lg splash">Back</button>
+        </a>
+      </p>
 
-<p>
-So you're ready to send a note to a past date. Here's a quick reminder of the steps. Don't stress. We're here every step of the way. 
-</p>
+      <p class="text-center">
+        <a href="/users/<%= current_user.id %>/contact">
+          <button type="button" class="btn btn-lg splash">OK!</button>
+        </a>
+      </p>   
 
-
-<div class="btn-group">
-	<a href="/users/<%= current_user.id %>" class= "btn btn-success btn-lg">Back</a>
-</div>
-
-<div class="btn-group">
-	<a href="/users/<%= current_user.id %>/contact" class= "btn btn-success btn-lg">OK!</a>
-</div>
+    </div>
+  </div>
