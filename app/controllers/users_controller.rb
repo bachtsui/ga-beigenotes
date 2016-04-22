@@ -104,12 +104,23 @@ class UsersController < ApplicationController
   end
 
   def show_note
-    #READ for notes
+    # @note = Note.find_by_id(params[:nid])
+    # render :snote
   end
 
-  #def edit_note
-    #UPDATE for notes
-  #end
+  def edit_note
+    @note = Note.find_by_id(params[:nid])
+    render :edit_note
+  end
+
+  def update_note
+    @user = current_user
+    @note = Note.find_by_id(params[:nid])
+    @note.update(notetwo_params)
+    @user.notes << @note
+    #Add note to the reciever of the note
+    redirect_to user_path(@user)
+  end
 
   #def update_note 
     #UPDATE for notes
@@ -129,6 +140,10 @@ class UsersController < ApplicationController
 
   def note_params
     params.require(:note).permit(:aone, :atwo)
+  end
+
+  def notetwo_params
+    params.require(:note).permit(:paone, :patwo)
   end
 
   def set_user

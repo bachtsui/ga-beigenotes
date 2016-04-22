@@ -24,10 +24,10 @@ Rails.application.routes.draw do
   get "/users/:id/notes/:nid", to: "users#show_note", as: "show_note"
   post "/users/:id/notes", to: "users#create_note"
   #Read for Notes
-  #get "/users/:id/notes/:nid/edit", to: "users#edit_note", as: "edit_note"
-  #patch "/users/:id/notes/:nid", to: "users#update_note"
+  get "/users/:id/notes/:nid/edit", to: "users#edit_note", as: "edit_note"
+  patch "/users/:id/notes/:nid", to: "users#update_note"
+  
   #Update for Notes, might need to add later
-
 
   # Routes for Sessions
   get "/login", to: "sessions#new", as: "new_session"   
