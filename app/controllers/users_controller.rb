@@ -98,6 +98,8 @@ class UsersController < ApplicationController
 
   def create_note
     @note = Note.create(note_params)
+    @user = current_user
+    @user.notes << @note
     send_message
     redirect_to "/users/#{current_user.slug}"
 
