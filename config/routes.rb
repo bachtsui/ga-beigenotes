@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   #Route for Onboard
   get "/onboard", to: "users#onboard", as: "onboard_user"
 
+  #Route for Note Instruction
+  get "/users/:id/instruction", to: "users#display", as: "display_instruction"
+
   #Routes for Contact
   get "/users/:id/contact", to: "users#new_contact", as: "new_contact"
   post "/users/:id/contact", to: "contacts#create"

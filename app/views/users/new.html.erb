@@ -8,7 +8,9 @@
 
 <!-- This codeblock will display any error messages that come up -->
 
-<div class="container">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 	<h1>Tells us about yourself!</h1>
 	  	<%= form_for @user, url: "/users", method: "post" do |f| %>
 		    <div class="form-group">
@@ -38,4 +40,6 @@
 		    </div>
 			<% end %> 
 			</div>
+		</div>
+	</div>		
 </div>
