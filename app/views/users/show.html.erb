@@ -5,26 +5,17 @@
     </div>
   </div>
 <% end %>
-<div class="container">
-  <h1><span>Welcome, <%= @user.first_name %> <%= @user.last_name %></span></h1>
-    <ul>
-      <li><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></li>
-      <li><b>Phone Number: </b><%= @user.phone_number %></li>
-      <li><b>Email: </b><%= @user.email %></li>
-      <li><b>Username: </b><%= @user.username %></li>
-    </ul>  
-    <% if current_user == @user %>
-    	<div class="btn-group">
-      	<a href="/users/<%= @user.id %>/edit" class= "btn btn-success btn-lg">
-         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
-      </div>
-            
-      <div class="btn-group">
-        <%= button_to "Delete profile", @user, {method: :delete, data: {confirm: "Are you sure you want to delete your account?"}, class: "btn btn-danger btn-lg"}  %>
-      	<% end %>  
-      </div>
-    <li><%= link_to "Log Out", destroy_session_path %></li>
-    <div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-center">Hello <%= @user.first_name %> <%= @user.last_name %>!</h1>
+      <p class="text-center"><a href="/users/<%= current_user.id %>/instruction"><button type="button" class="btn btn-lg splash">Send a Note</button></a></p>
+      <%=image_tag("flying_note.png", class: "img-responsive center-block", id: "flying", alt: "Example Image")%>
+      <!-- <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">Respond Notes</button></a></p>
+      <%=image_tag("respond_note.png", class: "img-responsive center-block", alt: "Example Image")%>
+      <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">View Completed Notes</button></a></p>
+      <%=image_tag("one_note.png", class: "img-responsive center-block", id: "note", alt: "Example Image")%>  -->
       <h2> Completed Notes </h2>
         <% @notes.each do |note| %>
           <ul>
@@ -33,6 +24,11 @@
               <%=note.created_at%> </a>
             </li>
           </ul>
-        <% end %>
+      <% end %>     
     </div>
+  </div>
 </div>
+
+
+
+ 
