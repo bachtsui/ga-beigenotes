@@ -3,11 +3,24 @@ You're Creating a New Note Page!
 <%= form_for @note, url: "/users/#{current_user.id}/notes", method: "post" do |f| %>
 	<%= f.hidden_field :user_id, value: current_user.id %>
 	<%= f.hidden_field :note_id, value: @note.id %>
-	<%= f.label "Where did you meet this person (so we can send them a reminder)?" %>
-	<%= f.text_field :aone, :required => true, class: "form-control" %>
-
+	
 	<%= f.label "What did you like the most about this person?" %>
-	<%= f.text_field :atwo, :required => true, class: "form-control"%>
+	<%= f.text_field :aone, :required => true, class: "form-control", placeholder: "Examples: he had a beautiful smile, she made me laugh so hard I cried, he could open a bottle of wine with just a shoe, she looked like the sunrise..." %>
+
+	<%= f.label "Did your date have any red flags or deal breakers?" %>
+	<%= f.text_field :atwo, :required => true, class: "form-control", placeholder: "Examples: photos were way off, he had just moved to the city and I didn't want to act as a tour guide, she was really into horoscopes..."%>
+
+	<%= f.label "Is there anything you would have done differently during your encounter(s) with this person?" %>
+	<%= f.text_field :athree, :required => true, class: "form-control", placeholder: "Examples: I would have had one drink less; followed up; gone in for a kiss."%>
+
+	<%= f.label "Is there anything you would have liked your date to have done/not done during your last encounter?" %>
+	<%= f.text_field :afour, :required => true, class: "form-control", placeholder: "Examples: I wished he would have kissed me when we were sitting in the park; it would have been nice if she talked less about herself and asked me more questions."%>
+
+	<%= f.label "Would you go on another date with this person?" %>
+	<%= f.text_field :afive, :required => true, class: "form-control", placeholder: "Yes, No, or Maybe"%>
+
+	<%= f.label "Why?" %>
+	<%= f.text_field :asix, :required => true, class: "form-control", placeholder: "Examples: we had great chemistry; it seemed like we wanted different things in a relationship; we had varying cultural viewpoints"%>
 
 	 <%= f.submit "Submit", class: "btn btn-default  center-bl form-control" %>
 <% end %>

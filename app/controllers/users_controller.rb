@@ -147,11 +147,11 @@ class UsersController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:aone, :atwo)
+    params.require(:note).permit(:aone, :atwo, :athree, :afour, :afive, :asix)
   end
 
   def notetwo_params
-    params.require(:note).permit(:paone, :patwo)
+    params.require(:note).permit(:paone, :patwo, :pathree, :pafour, :pafive, :pasix)
   end
 
   def set_user
