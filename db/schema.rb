@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421211716) do
+ActiveRecord::Schema.define(version: 20160425210255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160421211716) do
     t.string   "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "location"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -64,6 +65,12 @@ ActiveRecord::Schema.define(version: 20160421211716) do
     t.text     "pathree"
     t.text     "pafour"
     t.text     "pafive"
+    t.string   "qsix"
+    t.string   "qseven"
+    t.text     "asix"
+    t.text     "aseven"
+    t.text     "pasix"
+    t.text     "paseven"
   end
 
   create_table "questions", force: :cascade do |t|
