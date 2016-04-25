@@ -4,7 +4,7 @@ Here Are Your Completed Notes
   <% @notes.each do |note| %>
     <ul>
       <li>
-        <a href= "<%=current_user.id%>/notes/<%=note.id%>">
+        <a href= "notes/<%=note.id%>">
         <%=note.created_at%> </a>
       </li>
     </ul>

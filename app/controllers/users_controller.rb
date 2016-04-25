@@ -125,7 +125,8 @@ Beige Notes"
 
   def complete_note
     @user = current_user
-    render :complete_notes
+    @notes = @user.notes
+    render :completed_notes
   end
 
   def show_note
