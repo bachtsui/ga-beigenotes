@@ -101,21 +101,15 @@ Beige Notes"
     end
   end
 
-  #METHOD for Contact
-  # def contact
-  # end
-  
 
-  #CR for Notes
-  #Can we delete notes
-
-  #Create for notes
+  #Method for Contact
   def new_contact
     @user = User.friendly.find(params[:id])
     @contact = Contact.new
     render :form
   end
 
+  #Methods for Note
   def new_note
     @note = Note.new
     render :note
@@ -127,6 +121,11 @@ Beige Notes"
     @user.notes << @note
     send_message
     redirect_to "/users/#{current_user.slug}"
+  end
+
+  def complete_note
+    @user = current_user
+    render :complete_notes
   end
 
   def show_note

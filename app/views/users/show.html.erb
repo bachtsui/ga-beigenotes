@@ -12,10 +12,13 @@
       <h1 class="text-center">Hello <%= @user.first_name %> <%= @user.last_name %>!</h1>
       <p class="text-center"><a href="/users/<%= current_user.id %>/instruction"><button type="button" class="btn btn-lg splash">Send a Note</button></a></p>
       <%=image_tag("flying_note.png", class: "img-responsive center-block", id: "flying", alt: "Example Image")%>
+      
       <!-- <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">Respond Notes</button></a></p>
-      <%=image_tag("respond_note.png", class: "img-responsive center-block", alt: "Example Image")%>
-      <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">View Completed Notes</button></a></p>
-      <%=image_tag("one_note.png", class: "img-responsive center-block", id: "note", alt: "Example Image")%>  -->
+      <%=image_tag("respond_note.png", class: "img-responsive center-block", alt: "Example Image")%> -->
+      
+      <p class="text-center"><a href="/users/<%= current_user.id %>/completed"><button type="button" class="btn btn-lg splash">View Completed Notes</button></a></p>
+      <%=image_tag("one_note.png", class: "img-responsive center-block", id: "note", alt: "Example Image")%> 
+      
       <h2> Completed Notes </h2>
         <% @notes.each do |note| %>
           <ul>
