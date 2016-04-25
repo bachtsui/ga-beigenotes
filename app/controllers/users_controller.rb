@@ -11,8 +11,25 @@ class UsersController < ApplicationController
     twilio_client.messages.create(
       to: @user.contacts.last.number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Try Beigenotes: https://afternoon-basin-78472.herokuapp.com/onboard\n Here's a note for you to respond to\n 
-      https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit"
+      body: "Hello #{@user.contacts.last.name}:
+
+#{@user.first_name} whom you met via #{@user.contacts.last.location} has just filled out some questions about your date.
+
+Here’s a snippet of what your date had to say:
+
+“#{Note.last.aone}”
+
+To see what else they had to say:
+1. Click on this link to sign up/login to BeigeNotes https://afternoon-basin-78472.herokuapp.com/onboard\n
+2. Answer the same questions about your date to see what else they had to say. It will only take about 2 mins. Click here to answer
+https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit
+
+Best,
+Cindy
+Beige Notes" 
+
+      # Try Beigenotes: https://afternoon-basin-78472.herokuapp.com/onboard\n Here's a note for you to respond to\n 
+      # https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit"
     )
   end
 
