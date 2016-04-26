@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     twilio_client.messages.create(
       to: @user.contacts.last.number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Hello #{@user.contacts.last.name}:
+      body: "Hey #{@user.contacts.last.name}:
 
-#{@user.first_name} whom you met via #{@user.contacts.last.location} has just filled out some questions about your date.
+#{@user.first_name} from #{@user.contacts.last.location} has just filled out some questions about your date.
 
 Here’s a snippet of what your date had to say:
 
@@ -143,8 +143,9 @@ Beige Notes"
     @user = current_user
     @note = Note.find_by_id(params[:nid])
     @note.update(notetwo_params)
-    @user.notes << @note
     @note.completed = true
+    @note.save
+    @user.notes << @note
     # respond_message
     #Add note to the reciever of the note
     redirect_to user_path(@user)
