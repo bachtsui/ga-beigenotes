@@ -11,7 +11,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-	<h1>Tells us about yourself!</h1>
+			<h3>Tells Us About Yourself</h3>
 	  	<%= form_for @user, url: "/users", method: "post" do |f| %>
 		    <div class="form-group">
 		      <%= f.text_field :first_name, :required => true, class: "form-control", placeholder: "First Name" %>
@@ -22,13 +22,10 @@
 		    <div class="form-group">
 		      <%= f.text_field :phone_number, :required => true, class: "form-control", placeholder: "Phone Number" %>
 		    </div>
-		    <div class="form-group">
-		      <%= f.text_field :email, :required => true, class: "form-control", placeholder: "email@example.com" %>
-		    </div>
-			<h3>Create Login Credentials</h3>	    
-		    <div class="form-group">
-		      <%= f.text_field :username, :required => true, class: "form-control", placeholder: "Username" %>
-		    </div>
+			<h3>Create Login</h3>	
+				<div class="form-group">
+		      <%= f.text_field :email, :required => true, class: "form-control", placeholder: "Email@example.com" %>
+		    </div>    
 		    <div class="form-group">
 		      <%= f.password_field :password, :required => true, class: "form-control", placeholder: "Password" %>
 		    </div>  
