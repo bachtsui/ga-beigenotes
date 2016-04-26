@@ -42,7 +42,7 @@
 }
 
 .learn_more {
-  margin-top: -185px;
+  margin-top: -534px;
 }
 
 button.btn.btn-lg.splash {
@@ -119,6 +119,10 @@ a {
   h1 {
   font-size: 3em !important;
   }
+
+.learn_more {
+  margin-top: -276px;
+}  
 }
 
 /* .jumbotron {

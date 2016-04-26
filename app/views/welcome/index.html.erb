@@ -6,15 +6,16 @@
       </div>
       <div class="learn_more text-center">
         <p class="text-center" id="more">Learn More</p>
-        <p><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p>
+        <a href="#what"><p><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p></a>
       </div>
       <div class="row text-center" id="buttons">
         <p><a href="./signup"><button type="button" class="btn btn-lg splash">Sign up</button></a></p>
         <p><a href="./login"><button type="button" class="btn btn-lg splash">Login</button></a></p>      
       </div> 
+    </div>  
       <div class="container">
         <div class="row">
-          <h1 class="text-center">What We Do</h1>
+          <h1 class="text-center" id="what">What We Do</h1>
             <p>Have you ever been on a date and thought it was going well but it ended and <strong>you don't know why</strong>?</p>
             <%=image_tag("question_mark.png", class: "img-responsive center-block", alt: "Example Image")%>
             <p>We're offering you a way to <strong>stop guessing</strong> without having that awkward conversation directly. Simply put, we'll ask the hard question so you don't have to.</p> 
@@ -25,8 +26,9 @@
             <p class="text-center">Gain closure</p>
             <%=image_tag("question_mark_x.png", class: "img-responsive center-block", alt: "Example Image")%>
             <p class="text-center">Stop guessing &amp; understand your date</p>
+        </div> 
+      </div>     
           <h1 class="text-center">How It Works</h1>
-        </div>
       <div class="container">    
         <div class="row">
           <div class="col-md-2"><%=image_tag("1.png", class: "img-responsive center-block", alt: "Example Image")%></div>
