@@ -96,6 +96,21 @@ a {
   height: 40%;
 }
 
+.submit{
+  background-color:#DE635E;
+}
+
+.submit:hover {
+  background: #c75954;
+}
+
+.next{
+  background-color:#FDB25D; 
+}
+
+.next:hover{
+  background: #F2A855;
+}
 /* .jumbotron {
   background: no-repeat center center, url(splash.jpg) ;
  }*/
