@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     twilio_client.messages.create(
       to: @user.contacts.last.number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Hello #{@user.contacts.last.name}:
+      body: "Hey #{@user.contacts.last.name}:
 
-#{@user.first_name} whom you met via #{@user.contacts.last.location} has just filled out some questions about your date.
+#{@user.first_name} from #{@user.contacts.last.location} has just filled out some questions about your date.
 
 Here’s a snippet of what your date had to say:
 
