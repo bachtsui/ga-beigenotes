@@ -1,4 +1,4 @@
-/*
+  /*
  * app/assets/stylesheets/application.css
  */
 
@@ -33,6 +33,18 @@
   margin-top: -80px;
 }
 
+#more {
+  font-size: 2em;
+}
+#learn {
+  color: #de635e;
+  font-size: 2em;
+}
+
+.learn_more {
+  margin-top: -534px;
+}
+
 button.btn.btn-lg.splash {
   background-color: #de635e;
   color: #ffffff;
@@ -48,10 +60,6 @@ button.btn.btn-lg.splash {
   font-size: 1.25em;
 }
 
-/*#bs-example-navbar-collapse-1 {
-  background-color: #EBDECB;
-}*/
-
 ul {
   list-style: none;
 }
@@ -59,7 +67,15 @@ ul {
 body {
   font-family: helvetica;
   color: #4a4a4A;
-  background-color: #b9f0f1;
+  background-color: #b9f0f1 !important;
+}
+
+h1 {
+  font-size: 10em !important;
+}
+
+p {
+  font-size: 2.5em;
 }
 
 .navbar-default {
@@ -82,9 +98,7 @@ a {
   color: #ffffff;
 }
 
-#buttons {
-  margin-top: -180px;
-}
+
 
 #flying {
   width: 70%;
@@ -95,6 +109,10 @@ a {
   width: 40%;
   height: 40%;
 }
+
+.learn_more {
+  margin-top: -276px;
+}  
 
 .submit{
   background-color:#DE635E;
@@ -111,6 +129,9 @@ a {
 .next:hover{
   background: #F2A855;
 }
-/* .jumbotron {
-  background: no-repeat center center, url(splash.jpg) ;
- }*/
+
+@media (max-width: 400px) {
+  h1 {
+  font-size: 3em !important;
+  }
+}
