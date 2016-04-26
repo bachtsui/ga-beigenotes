@@ -23,6 +23,14 @@ class User < ActiveRecord::Base
     @user.try(:authenticate, params[:password])
   end  
 
+  def first_name=(value)
+    write_attribute(:first_name, value.capitalize)
+  end
+
+  def last_name=(value)
+    write_attribute(:last_name, value.capitalize)
+  end
+
   # Many to Many Association for User and Notes
   has_many :user_note_joints
   has_many :notes, :through => :user_note_joints
