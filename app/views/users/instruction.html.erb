@@ -4,17 +4,19 @@
       <h1 class="text-center">Hello There!</h1>
       <p>So you're ready to send a note to a past date. Here's a quick reminder of the steps. Don't stress. We're here every step of the way.</p>
       <%=image_tag("instructions.png", class: "img-responsive center-block", alt: "Example Image")%> 
+
+      <p class="text-center">
+        <a href="/users/<%= current_user.id %>/contact">
+          <button type="button" class="btn btn-lg splash">Start a Note!</button>
+        </a>
+      </p>   
+
       <p class="text-center">
         <a href="/users/<%= current_user.id %>">
             <button type="button" class="btn btn-lg splash">Back</button>
         </a>
       </p>
-
-      <p class="text-center">
-        <a href="/users/<%= current_user.id %>/contact">
-          <button type="button" class="btn btn-lg splash">OK!</button>
-        </a>
-      </p>   
-
+      
     </div>
   </div>
+</div>
