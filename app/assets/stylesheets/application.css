@@ -33,6 +33,18 @@
   margin-top: -80px;
 }
 
+#more {
+  font-size: 2em;
+}
+#learn {
+  color: #de635e;
+  font-size: 2em;
+}
+
+.learn_more {
+  margin-top: -185px;
+}
+
 button.btn.btn-lg.splash {
   background-color: #de635e;
   color: #ffffff;
@@ -59,7 +71,7 @@ ul {
 body {
   font-family: helvetica;
   color: #4a4a4A;
-  background-color: #b9f0f1;
+  background-color: #b9f0f1 !important;
 }
 
 .navbar-default {
@@ -83,7 +95,6 @@ a {
 }
 
 #buttons {
-  margin-top: -180px;
 }
 
 #flying {
