@@ -143,8 +143,9 @@ Beige Notes"
     @user = current_user
     @note = Note.find_by_id(params[:nid])
     @note.update(notetwo_params)
-    @user.notes << @note
     @note.completed = true
+    @note.save
+    @user.notes << @note
     # respond_message
     #Add note to the reciever of the note
     redirect_to user_path(@user)
