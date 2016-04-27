@@ -37,7 +37,7 @@ Beige Notes"
   #We need to make a note helper function
   def respond_message
     @user = current_user
-    @note = @user.note.last
+    @note = @user.notes.last
     twilio_client.messages.create(
       to: @note.users.first.phone_number,
       from: ENV['TWILIO_PHONE_NUMBER'],
