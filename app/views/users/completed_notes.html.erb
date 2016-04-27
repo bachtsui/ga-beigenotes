@@ -4,7 +4,9 @@
 	    <ul>
 	      <li>
 	        <a href= "notes/<%=note.id%>">
-	        <%=note.created_at%> </a>
+	        From: <%=note.users.last.first_name%>
+	        <br>
+	        Created: <%=note.created_at.strftime('%B %d, %Y')%> </a>
 	      </li>
 	    </ul>
 		<% end %>
