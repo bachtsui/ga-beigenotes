@@ -150,4 +150,9 @@ textarea {
   margin-top: -295px;
   font-size: 1.5em!important;
   } 
+
+  #envelope {
+    width: 55%;
+    height: 55%;
+  }
 }

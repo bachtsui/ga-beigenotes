@@ -3,7 +3,32 @@
     <div class="col-md-6 col-md-offset-3">
       <h1 class="text-center">Hello There!</h1>
       <p>Someone you went on a date with has answered some questions for you. To see their full answers, set up an account and return the favor by answering the same questions here. It will only take about 3 minutes.</p>
-      <%=image_tag("onboarding.png", class: "img-responsive center-block", alt: "Example Image")%> 
+			<h1 class="text-center landing" id="works">How It Works</h1>
+      <div class="container">    
+        <div class="row">
+          <div class="col-md-2"><%=image_tag("1.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+          <div class="col-md-2"><%=image_tag("small_note.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-md-8"><p class="text-center landing">We provide you &amp; your date with questions which take ~3 mins to answer.</p></div>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-md-2"><%=image_tag("2.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+      <div class="col-md-2">.<%=image_tag("check.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-md-8"><p class="text-center landing">You both answer the same questions.</p></div>
+        </div>
+               
+        <div class="row">
+          <div class="col-md-2"><%=image_tag("3.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+          <div class="col-md-2">.<%=image_tag("envelope_open.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+          <!-- Optional: clear the XS cols if their content doesn't match in height -->
+          <div class="clearfix visible-xs-block"></div>
+          <div class="col-md-8"><p class="text-center landing">We only share answers when we've heard from both sides.</p></div>
+        </div>
+<!--       <%=image_tag("onboarding.png", class: "img-responsive center-block", alt: "Example Image")%>  -->
      <p class="text-center"><a href="./signup"><button type="button" class="btn btn-lg splash">Sign up</button></a></p>
       <p class="text-center"><a href="./login"><button type="button" class="btn btn-lg splash">Login</button></a></p>     
     </div>
