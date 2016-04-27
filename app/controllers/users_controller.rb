@@ -36,6 +36,8 @@ Beige Notes"
   #Need a way for the original sender to get notified
   #We need to make a note helper function
   def respond_message
+    @user = current_user
+    @note = @user.note.last
     twilio_client.messages.create(
       to: @note.users.first.phone_number,
       from: ENV['TWILIO_PHONE_NUMBER'],
@@ -155,7 +157,7 @@ Beige Notes"
     @note.pending = false
     @note.save
     @user.notes << @note
-    # respond_message
+    respond_message
     #Add note to the reciever of the note
     redirect_to user_path(@user)
   end
@@ -167,6 +169,7 @@ Beige Notes"
   def display
     render :instruction
   end
+
   private
 
   def user_params
