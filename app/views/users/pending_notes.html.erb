@@ -1,0 +1,11 @@
+<h2> Pending Notes </h2>
+  <% @notes.each do |note| %>
+  	<% if note.pending == true%>
+	    <ul>
+	      <li>
+	        <a href= "notes/<%=note.id%>">
+	        <%=note.created_at%> </a>
+	      </li>
+	    </ul>
+		<% end %>
+	<% end %> 

@@ -36,11 +36,14 @@ Beige Notes"
   #Need a way for the original sender to get notified
   #We need to make a note helper function
   def respond_message
+    @user = current_user
+    @note = @user.notes.last
     twilio_client.messages.create(
       to: @note.users.first.phone_number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Your note was completed!\n 
-      https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/"
+      body: "Hey #{@note.users.first.first_name}
+
+Your note from #{@user.first_name} was completed!"
     )
   end
 
@@ -118,6 +121,8 @@ Beige Notes"
   def create_note
     @note = Note.create(note_params)
     @user = current_user
+    @note.pending = true
+    @note.save
     @user.notes << @note
     send_message
     redirect_to "/users/#{current_user.slug}"
@@ -127,6 +132,12 @@ Beige Notes"
     @user = current_user
     @notes = @user.notes
     render :completed_notes
+  end
+
+  def pending_note
+    @user = current_user
+    @notes = @user.notes
+    render :pending_notes
   end
 
   def show_note
@@ -144,9 +155,10 @@ Beige Notes"
     @note = Note.find_by_id(params[:nid])
     @note.update(notetwo_params)
     @note.completed = true
+    @note.pending = false
     @note.save
     @user.notes << @note
-    # respond_message
+    respond_message
     #Add note to the reciever of the note
     redirect_to user_path(@user)
   end
@@ -158,6 +170,7 @@ Beige Notes"
   def display
     render :instruction
   end
+
   private
 
   def user_params
