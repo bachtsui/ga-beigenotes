@@ -118,6 +118,8 @@ Beige Notes"
   def create_note
     @note = Note.create(note_params)
     @user = current_user
+    @note.pending = true
+    @note.save
     @user.notes << @note
     send_message
     redirect_to "/users/#{current_user.slug}"
@@ -127,6 +129,12 @@ Beige Notes"
     @user = current_user
     @notes = @user.notes
     render :completed_notes
+  end
+
+  def pending_note
+    @user = current_user
+    @notes = @user.notes
+    render :pending_notes
   end
 
   def show_note
@@ -144,6 +152,7 @@ Beige Notes"
     @note = Note.find_by_id(params[:nid])
     @note.update(notetwo_params)
     @note.completed = true
+    @note.pending = false
     @note.save
     @user.notes << @note
     # respond_message
