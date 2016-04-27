@@ -110,7 +110,6 @@ a {
   height: 40%;
 }
 
- 
 
 .submit{
   background-color:#DE635E;
@@ -128,10 +127,13 @@ a {
   background: #F2A855;
 }
 
+.purple{
+  background-color: #9A32CD;
+}
 
 @media (max-width: 400px) {
-  h1 {
-  font-size: 3em !important;
+  h1.landing {
+  font-size: 2.5em!important;
   }
   .learn_more {
   margin-top: -276px;
