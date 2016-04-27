@@ -131,6 +131,12 @@ a {
   background-color: #9A32CD;
 }
 
+textarea {
+    width: 300px;
+    height: 150px;
+    resize:none;
+}
+
 @media (max-width: 400px) {
   h1.landing {
   font-size: 2.5em!important;
