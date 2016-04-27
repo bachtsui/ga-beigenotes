@@ -41,8 +41,9 @@ Beige Notes"
     twilio_client.messages.create(
       to: @note.users.first.phone_number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Your note was completed!\n 
-      https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/"
+      body: "Hey #{@note.users.first.first_name}
+
+Your note from #{@user.first_name} was completed!"
     )
   end
 
