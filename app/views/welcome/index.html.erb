@@ -1,39 +1,33 @@
-<div class="splash">
-  <div class="container">
-    
-    <div class="row">
-      <div class="landing_image">
+<div class="container">
+  <div class="row">
+    <div class="landing_image">
       <%=image_tag("notes_together.png", class: "img-responsive center-block", id: "splash", alt: "Example Image")%>
-      </div>
-      <div class="learn_more text-center">
-        <p class="text-center" id="more">Learn More</p>
-        <a href="#what"><p class="landing"><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p></a>
-      </div>
-      <div class="row text-center" id="buttons">
-        <p class="landing"><a href="./signup"><button type="button" class="btn btn-lg splash">Sign up</button></a></p>
-        <p class="landing"><a href="./login"><button type="button" class="btn btn-lg splash">Login</button></a></p>      
-      </div>
-    </div>  
-
-      <div class="container">
-        <div class="row">
-          <a href="#what"><p class="text-center"><span class="glyphicon glyphicon-chevron-up" id="learn" aria-hidden="true"></span></p></a>
-          <h1 class="text-center landing" id="what">What We Do</h1>
-            <p class="text-center landing">Have you ever been on a date and thought it was going well but it ended and <strong>you don't know why</strong>?</p>
-            <%=image_tag("question_mark.png", class: "img-responsive center-block", alt: "Example Image")%>
-            <p class="text-center landing">We're offering you a way to <strong>stop guessing</strong> without having that awkward conversation directly. Simply put, we'll ask the hard question so you don't have to.</p> 
-            <a href="#benefits"><p class="text-center"><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p></a>
-          <h1 class="text-center landing" id="benefits">Benefits</h1>
-            <%=image_tag("receive_feedback.png", class: "img-responsive center-block", alt: "Example Image")%>
-            <p class="text-center landing">Receive feedback &amp; learn tips for future dates</p>
-            <%=image_tag("broken_heart.png", class: "img-responsive center-block", alt: "Example Image")%>
-            <p class="text-center landing">Gain closure</p>
-            <%=image_tag("question_mark_x.png", class: "img-responsive center-block", alt: "Example Image")%>
-            <p class="text-center landing">Stop guessing &amp; understand your date</p>
-            <a href="#works"><p class="text-center"><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p></a>
-        </div> 
-      </div>     
+      <p class="text-center learn_more" id="more">Learn More</p>
+      <a href="#what"><p class="landing text-center"><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p></a>
+      <p class="landing text-center"><a href="./signup"><button type="button" class="btn btn-lg splash ">Sign up</button></a></p>
+      <p class="landing text-center"><a href="./login"><button type="button" class="btn btn-lg splash ">Login</button></a></p>  
       
+      <div class="container">    
+        <div class="row">
+      <h1 class="text-center landing" id="what">What We Do</h1>
+      <p class="text-center landing">Have you ever been on a date and thought it was going well but it ended and <strong>you don't know why</strong>?</p>
+      <%=image_tag("question_mark.png", class: "img-responsive center-block", alt: "Example Image")%>
+      <p class="text-center landing">We're offering you a way to <strong>stop guessing</strong> without having that awkward conversation directly. Simply put, we'll ask the hard question so you don't have to.</p> 
+      <div class="container">    
+        <div class="row">
+         <div class="container">
+          <a href="#benefits"><p class="landing text-center"><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p></a>
+          <h1 class="text-center landing" id="benefits">Benefits</h1>
+          <%=image_tag("receive_feedback.png", class: "img-responsive center-block", alt: "Example Image")%>
+          <p class="text-center landing">Receive feedback &amp; learn tips for future dates</p>
+          <%=image_tag("broken_heart.png", class: "img-responsive center-block", alt: "Example Image")%>
+          <p class="text-center landing">Gain closure</p>
+          <%=image_tag("question_mark_x.png", class: "img-responsive center-block", alt: "Example Image")%>
+          <p class="text-center landing">Stop guessing &amp; understand your date</p>
+          <a href="#works"><p class="landing text-center"><span class="glyphicon glyphicon-chevron-down" id="learn" aria-hidden="true"></span></p></a>
+      </div>
+    </div>
+    </div>
       <h1 class="text-center landing" id="works">How It Works</h1>
       <div class="container">    
         <div class="row">
@@ -42,11 +36,11 @@
           <!-- Optional: clear the XS cols if their content doesn't match in height -->
           <div class="clearfix visible-xs-block"></div>
           <div class="col-md-8"><p class="text-center landing">We provide you &amp; your date with questions which ~2 mins to answer.</p></div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-2"><%=image_tag("2.png", class: "img-responsive center-block", alt: "Example Image")%></div>
-          <div class="col-md-2">.<%=image_tag("check.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col-md-2"><%=image_tag("2.png", class: "img-responsive center-block", alt: "Example Image")%></div>
+      <div class="col-md-2">.<%=image_tag("check.png", class: "img-responsive center-block", alt: "Example Image")%></div>
           <!-- Optional: clear the XS cols if their content doesn't match in height -->
           <div class="clearfix visible-xs-block"></div>
           <div class="col-md-8"><p class="text-center landing">You both answer the same questions.</p></div>
@@ -60,6 +54,7 @@
           <div class="col-md-8"><p class="text-center landing">We only share answers when we've heard from both sides.</p></div>
         </div>       
         <p class="text-center landing">Join other who have gained closure, learned useful dating tips, transformed dates into friends and rekindled old relationships by trying out Beige Notes.</p>
-        </div>
-    </div> 
-  </div>        
+
+
+  </div>
+</div>    
