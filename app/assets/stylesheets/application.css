@@ -127,12 +127,27 @@ a {
   background: #F2A855;
 }
 
-.purple{
-  background-color: #9A32CD;
+.lblue{
+  background-color: #87d4d5;
+  /*light blue*/
+}
+
+.panel-default>.panel-heading {
+  background-color: #4dbfc0!important;
+  color: #ffffff; 
+  /*It's blue now*/
 }
 
 #blue{
   background-color: #35586C; 
+}
+
+#dark {
+  background-color: #283A90!important;
+}
+
+#question {
+  color: #ffffff;
 }
 
 textarea {
