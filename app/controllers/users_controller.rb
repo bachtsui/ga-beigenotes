@@ -38,7 +38,7 @@ Beige Notes"
     @user = current_user
     @note = @user.notes.last
     twilio_client.messages.create(
-      to: @note.users.first.phone_number,
+      to: @note.users.last.phone_number,
       from: ENV['TWILIO_PHONE_NUMBER'],
       body: "Hey #{@note.users.last.first_name}
 
