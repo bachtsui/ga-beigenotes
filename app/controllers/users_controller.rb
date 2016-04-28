@@ -37,12 +37,16 @@ Beige Notes"
   def respond_message
     @user = current_user
     @note = @user.notes.last
+    @receiver = User.find_by_id(@note.created_by)
+    # So you have note, you can fine the number created_by
+    # Now you have the number, find User with that ID number
+    # Now you have user , find the phone number
     twilio_client.messages.create(
-      to: @note.users.all.first.phone_number,
+      to: @receiver.phone_number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Hey #{@note.users.all.first.first_name}
+      body: "Hey #{@receiver.first_name}
 
-Your note to #{@note.users.all.last.first_name} was completed!
+Your note to #{@user.first_name} was completed!
 
 Make sure you're logged in before clicking the link:
 https://afternoon-basin-78472.herokuapp.com/users/#{@note.users.first.id}/notes/#{Note.last.id}"
@@ -124,6 +128,7 @@ https://afternoon-basin-78472.herokuapp.com/users/#{@note.users.first.id}/notes/
     @note = Note.create(note_params)
     @user = current_user
     @note.pending = true
+    @note.created_by = @user.id
     @note.save
     @user.notes << @note
     send_message
