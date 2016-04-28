@@ -38,11 +38,11 @@ Beige Notes"
     @user = current_user
     @note = @user.notes.last
     twilio_client.messages.create(
-      to: @note.users.last.phone_number,
+      to: @note.users.all.first.phone_number,
       from: ENV['TWILIO_PHONE_NUMBER'],
-      body: "Hey #{@note.users.last.first_name}
+      body: "Hey #{@note.users.all.first.first_name}
 
-Your note to #{@note.users.first.first_name} was completed!
+Your note to #{@note.users.all.last.first_name} was completed!
 
 Make sure you're logged in before clicking the link:
 https://afternoon-basin-78472.herokuapp.com/users/#{@note.users.first.id}/notes/#{Note.last.id}"
