@@ -42,7 +42,7 @@ Beige Notes"
       from: ENV['TWILIO_PHONE_NUMBER'],
       body: "Hey #{@note.users.last.first_name}
 
-Your note from #{@note.users.first.first_name} was completed!
+Your note to #{@note.users.first.first_name} was completed!
 
 Make sure you're logged in before clicking the link:
 https://afternoon-basin-78472.herokuapp.com/users/#{@note.users.first.id}/notes/#{Note.last.id}"
