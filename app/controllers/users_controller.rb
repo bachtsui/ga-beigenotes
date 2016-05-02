@@ -20,15 +20,15 @@ Here’s a snippet of what they liked the most about you:
 “#{Note.last.aone}”
 
 To see what else they had to say:
-1. Click on this link to sign up/login to BeigeNotes https://afternoon-basin-78472.herokuapp.com/onboard\n
+1. Click on this link to sign up/login to BeigeNotes https://beigenotes.herokuapp.com/onboard\n
 2. Answer the same questions about your date to see what else they had to say. It will only take about 3 mins. Click here to answer
-https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit
+https://beigenotes.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit
 
 Best,
 Beige Notes" 
 
-      # Try Beigenotes: https://afternoon-basin-78472.herokuapp.com/onboard\n Here's a note for you to respond to\n 
-      # https://afternoon-basin-78472.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit"
+      # Try Beigenotes: https://beigenotes.herokuapp.com/onboard\n Here's a note for you to respond to\n 
+      # https://beigenotes.herokuapp.com/users/#{current_user.id}/notes/#{Note.last.id}/edit"
     )
   end
 
@@ -49,7 +49,7 @@ Beige Notes"
 Your note to #{@user.first_name} was completed!
 
 Make sure you're logged in before clicking the link:
-https://afternoon-basin-78472.herokuapp.com/users/#{@note.users.first.id}/notes/#{Note.last.id}"
+https://beigenotes.herokuapp.com/users/#{@note.users.first.id}/notes/#{Note.last.id}"
     )
   end
 
