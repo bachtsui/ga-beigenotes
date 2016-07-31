@@ -1,4 +1,4 @@
-  /*
+    /*
  * app/assets/stylesheets/application.css
  */
 
@@ -29,8 +29,28 @@
   font-weight: bold;
 }
 
+.item {
+  height: 675px;
+
+}
+
+.item active {
+  height: 675px;
+
+}
+
+.img {
+  height: 675px;
+
+}
+
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
 #splash {
-  margin-top: -80px;
+  margin-top: -50px;
 }
 
 #more {
@@ -41,8 +61,13 @@
   font-size: 2em;
 }
 
-.learn_more {
-  margin-top: -534px;
+#text {
+  font-size: 30px;
+}
+
+.header {
+  margin-top: -460px;
+  font-size: 50px;
 }
 
 button.btn.btn-lg.splash {
@@ -65,7 +90,7 @@ ul {
 }
 
 body {
-  font-family: helvetica;
+  font-family: arial;
   color: #4a4a4A;
   background-color: #b9f0f1 !important;
 }
@@ -79,23 +104,31 @@ p.landing {
 }
 
 .navbar-default {
-  background-color: #4dbfc0;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #4A4A4A;
 }
 
 .navbar-default .navbar-brand {
-  font-family: monospace;
-  color: #ffffff;
+  font-family: Arial;
+  color: #4A4A4A;
   margin-left: 90px;
   font-size: 2em; 
 }
 
+.pull-left {
+  margin-left: 20px;
+}
+
+.navbar-default .navbar-brand {
+  margin-left: 18px;
+}
+
 .button.navbar-toggle.collapsed {
-  color: #ffffff;
+  color: #4A4A4A;
 }
 
 a {
-  color: #ffffff;
+  color: #4A4A4A;
 }
 
 
@@ -161,12 +194,17 @@ textarea {
   font-size: 2.5em!important;
   }
 
+  .landing_image {
+
+  }
+
   p.landing {
+    margin-top: 100px;
     font-size: 1.5em!important;
   }
   
   .learn_more {
-  margin-top: -295px;
+  margin-top: -500px;
   font-size: 1.5em!important;
   } 
 
